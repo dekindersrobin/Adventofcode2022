@@ -1,4 +1,4 @@
-A, X, B, Y, C, Z = 1, 1, 2, 2, 3, 3
+A, X, B, Y, C, Z = 1, 0, 2, 3, 3, 6
 inputs = []
 score = 0
 
@@ -10,22 +10,22 @@ for line in input_lines:
 
 for battle in inputs:
     if battle[0] == "A" and battle[1] == "X":
-        score += X + 3
+        score += C + X
     elif battle[0] == "A" and battle[1] == "Y":
-        score += Y + 6
+        score += A + Y
     elif battle[0] == "A" and battle[1] == "Z":
-        score += Z + 0
+        score += B + Z
     elif battle[0] == "B" and battle[1] == "X":
-        score += X + 0
+        score += A + X
     elif battle[0] == "B" and battle[1] == "Y":
-        score += Y + 3
+        score += B + Y
     elif battle[0] == "B" and battle[1] == "Z":
-        score += Z + 6
+        score += C + Z
     elif battle[0] == "C" and battle[1] == "X":
-        score += X + 6
+        score += B + X
     elif battle[0] == "C" and battle[1] == "Y":
-        score += Y + 0
+        score += C + Y
     elif battle[0] == "C" and battle[1] == "Z":
-        score += Z + 3
+        score += A + Z
     print(battle[0] + " VS " + battle[1] + " : " + str(score))
     
