@@ -20,6 +20,10 @@ for input in input_lines:
         amount += 1
     elif (elve1p1 == biggest_number or elve1p2 == biggest_number) and (elve1p1 == smallest_number or elve1p2 == smallest_number):
         amount += 1
+    elif ((elve1p1 <= elve2p1) or (elve1p2 <= elve2p2)) and ((elve1p2 >= elve2p1) or (elve1p1 >= elve2p2)):
+        amount += 1
+    elif ((elve2p1 <= elve1p1) or (elve2p2 <= elve1p2)) and ((elve2p2 >= elve1p1) or (elve2p1 >= elve1p2)):
+        amount += 1
 
 
 
