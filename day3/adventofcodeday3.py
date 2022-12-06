@@ -1,19 +1,27 @@
 alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 common_chars = []
 sum = 0
+group = []
+i = 1
 
 with open("./day3/input.txt", "r") as input:
     input_lines = input.readlines()
 
 for line in input_lines:
-    first_part_of_line = line[0:len(line)//2]
-    second_part_of_line = line[len(line)//2:len(line)]
+    group.append(line.replace("\n", ""))
 
-    print(first_part_of_line)
-    print(second_part_of_line)
-    common_chars += list(set(first_part_of_line)&set(second_part_of_line))
+    if i == 3:
+        first_line = group[0]
+        second_line = group[1]
+        third_line = group[2]
 
-    print(common_chars)
+        common_chars += list(set(first_line)&set(second_line)&set(third_line))
+
+        i = 0
+        group.clear()
+    i += 1
+
+print(common_chars)
 
 for char in common_chars:
     sum += alphabet.index(char) + 1
